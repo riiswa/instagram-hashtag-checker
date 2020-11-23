@@ -9,7 +9,7 @@ from tqdm import tqdm
 
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import TimeoutException
-from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.by import By
 
 
@@ -36,7 +36,7 @@ def hashtag_is_valid(tag, browser, delay=5):
     try:
         url = f"https://www.instagram.com/explore/tags/{tag}/?__a=1"
         browser.get(url)
-        WebDriverWait(browser, delay).until(EC.presence_of_element_located((By.ID, 'json')))
+        WebDriverWait(browser, delay).until(expected_conditions.presence_of_element_located((By.ID, 'json')))
         content = browser.find_element_by_id('json').text
         parsed_json = json.loads(content)
         return parsed_json['graphql']['hashtag']['allow_following']
@@ -46,6 +46,7 @@ def hashtag_is_valid(tag, browser, delay=5):
         return True
     except KeyError:
         return False
+
 
 class UserTagChecker:
     """
@@ -76,9 +77,9 @@ class UserTagChecker:
 
         :return: The list of banned hashtags
         """
-        banned_hashtag_list = []
+        banned_tag_list = []
         with custom_smart_run(self.session):
             for tag in tqdm(self.tags):
                 if not hashtag_is_valid(tag, self.session.browser):
-                    banned_hashtag_list.append(tag)
-        return banned_hashtag_list
+                    banned_tag_list.append(tag)
+        return banned_tag_list

@@ -22,9 +22,9 @@ if __name__ == '__main__':
     ihc.get_user_hashtags()
     logging.info("End of process.")
     logging.info(f"Found {len(ihc.tags)} tags.")
-    banned_tag = ihc.get_banned_hashtags()
-    logging.info(f"Found {len(banned_tag)} banned tag(s).")
-    if len(banned_tag):
-        logging.info(f"Banned hashtags are: {', '.join([f'#{tag}' for tag in banned_tag])}")
+    banned_tags = ihc.get_banned_hashtags()
+    logging.info(f"Found {len(banned_tags)} banned tag(s).")
+    if len(banned_tags):
+        logging.info(f"Banned hashtags are: {', '.join([f'#{tag}' for tag in banned_tags])}")
 
 
