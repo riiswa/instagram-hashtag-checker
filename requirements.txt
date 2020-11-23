@@ -1,0 +1,7 @@
+instaloader~=4.5.3
+setuptools~=50.3.2
+beautifulsoup4~=4.9.3
+logging~=0.4.9.6
+instapy~=0.6.12
+selenium~=3.141.0
+tqdm~=4.53.0
