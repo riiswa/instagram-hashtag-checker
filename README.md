@@ -1,8 +1,8 @@
-# Instagram Hashtags Checker
+# Instagram Hashtag Checker
 
 Banned hashtags are hashtags that Instagram users have reported because the posts using them go against Instagram’s guidelines. Using one of these can cause get your Instagram account shadowbanned (Google for more details). 
 
-The Instagram Hashtags Checker tool aims to help you scan your account to detect bad hashtags in your posts
+The Instagram Hashtag Checker tool aims to help you scan your account to detect bad hashtags in your posts
 
 An article on my [blog](https://warisradji.com/) will arrive soon on this topic.
 
